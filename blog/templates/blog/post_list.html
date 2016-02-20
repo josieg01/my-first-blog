@@ -3,18 +3,16 @@
         <title> Put Away Childish Things </title>
     </head>
     <body>
-       <div>
-       		<h1></h1>>Put Away Childish Things</h1>
-       </div>
-       <div>
-       		<h2>First <strong>exciting</strong> first new article</h2>
-       		<p>Interesting text interesting text interesting text interesting text interesting text interesting text</p>
-       		<p>Published: 20 February 2016</p>
-       </div>
-       <div>
-        	<<h2>Second <strong>exciting</strong> first new article</h2>
-        	<p>Interesting text interesting text interesting text interesting text interesting text interesting text</p>
-        	<p>Published: 20 February 2016</p>
-        </div>
+     <div>
+    <h1><a href="/">Put Away Childish Things</a></h1>
+</div>
+
+{% for post in posts %}
+    <div>
+        <p>published: {{ post.published_date }}</p>
+        <h1><a href="">{{ post.title }}</a></h1>
+        <p>{{ post.text|linebreaks }}</p>
+    </div>
+{% endfor %}
     </body>
 </html>
